@@ -1,0 +1,26 @@
+body {
+	background-color: lightblue;
+	font-family: sans-serif;
+}
+
+legend {
+	text-align: center;
+}
+
+fieldset {
+	width: 30%;
+	border-color: darkslategray;
+	padding: 20px;
+}
+
+#title {
+	text-align:center;
+}
+
+textarea {
+	width: 90%;
+	height: 150px;
+	box-sizing: border-box;
+	resize: none;
+	font-size:large;
+}
