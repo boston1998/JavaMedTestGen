@@ -8,13 +8,14 @@ legend {
 }
 
 fieldset {
-	width: 30%;
+	width: 29%;
 	border-color: darkslategray;
 	padding: 20px;
 }
 
 #title {
-	text-align:center;
+	text-align:center; 
+	top:5%;
 }
 
 textarea {
@@ -23,4 +24,40 @@ textarea {
 	box-sizing: border-box;
 	resize: none;
 	font-size:large;
+}
+
+#vitals{
+	position:absolute;
+	left:0%;
+	top:66%
+}
+
+#aTreatment{
+	position:absolute;
+	left:33.6%;
+	top:66%
+}
+
+#iTreatment{
+	position:absolute;
+	left:67.2%;
+	top:66%
+}
+
+#save{
+	position:absolute;
+	top:137%;
+	left:25%;
+	width:50%;
+	height:100px;
+	font-size:72px;
+	border: 2px solid black;
+	transition-duration: 0.4s;
+}
+
+#caseNum{
+	position:absolute;
+	width: 2.5%;
+	top:2.7%;
+	left:64%;
 }
