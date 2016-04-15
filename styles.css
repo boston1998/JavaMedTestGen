@@ -44,15 +44,15 @@ textarea {
 	top:66%
 }
 
-#save{
-	position:absolute;
-	top:137%;
-	left:25%;
+button{
+	position:relative;
+	top:600px;
 	width:50%;
 	height:100px;
 	font-size:72px;
 	border: 2px solid black;
 	transition-duration: 0.4s;
+	float:left;
 }
 
 #caseNum{
