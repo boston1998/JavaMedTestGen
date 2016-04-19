@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
+<!--for the little tab on top of the browser-->
 <head>
+	<!--Applies  the style sheet-->
 	<link rel="stylesheet" href = "styles.css">
 	<title>Teacher end</title>
 </head>
 <body>
 	<form>
 			<h2 id = "title">MEDICAL SCENARIO: Case # <input type = "number", id="caseNum"></input></h2>
-			<br>
+			<br><!--ends particular line-->
 			<b>SCENARIO</b><br>
 			<textarea id = "scenario">Some sample text</textarea><br><br>
 			<b>PATIENT DATA</b><br>
@@ -17,7 +19,9 @@
 		<b>POTENTIAL LIFE THREAT:</b>
 		<br><input type = "text", id = "pLifeThreat"></input><br>
 		<div>
+			<!--A fieldset groups data together-->
 			<fieldset id="vitals">
+				<!--Title for the fieldset -->
 				<legend><b>VITAL SIGNS</b></legend>
 				Level of Consciousness <input type = "text", id = "con"></input><br><br>
 				Respirations <input type = "number", id = "resp"></input><br><br>
@@ -74,5 +78,9 @@
 	</form>
 	<button id = "save">Save</button>
 	<button id = "menu">Back to menu</button>
+	<br>
+	<div id = "caccLogo">
+		<img src="http://career-center.org/wp-content/uploads/2015/12/CACC.png", alt = "CACC Logo" style="width:130px;height:50px;"></img>
+	</div>
 </body>
 </html>
