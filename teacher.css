@@ -10,6 +10,15 @@ body {
 	top:5%;
 }
 
+#select{
+	position:relative;
+	display: inline-block;
+	width: 9%;
+	padding: 0px;
+	font-size: 25px;
+	text-align: center;
+}
+
 /*styling for the scenario and patient data text areas*/
 textarea {
 	width: 99%;
@@ -102,8 +111,10 @@ input{
 }
 /*exception to input css, goes to the right of the title*/
 #caseNum{
-	position:absolute;
+	position: relative;
 	width: 2.5%;
-	top:2.7%;
-	left:64%;
+	top:2.9%;
+	font: 25px;
+	margin: 5px;
+	right: 34%
 }

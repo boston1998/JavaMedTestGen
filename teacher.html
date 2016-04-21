@@ -3,12 +3,19 @@
 <!--for the little tab on top of the browser-->
 <head>
 	<!--Applies  the style sheet-->
-	<link rel="stylesheet" href = "styles.css">
+	<link rel="stylesheet" href = "teacher.css">
 	<title>Teacher end</title>
 </head>
 <body>
 	<form>
-			<h2 id = "title">MEDICAL SCENARIO: Case # <input type = "number", id="caseNum"></input></h2>
+			
+			<h2 id = "title"> 
+				<select id = "select">
+					<option value = "Medical">Medical<option>
+					<option value = "Trauma">Trauma<option>
+				</select>
+			SCENARIO: Case # <input type = "number", id="caseNum"></input></h2>
+			
 			<br><!--ends particular line-->
 			<b>SCENARIO</b><br>
 			<textarea id = "scenario">Some sample text</textarea><br><br>
