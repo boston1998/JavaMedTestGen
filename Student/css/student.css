@@ -18,7 +18,15 @@ legend {
 /*Styling for the fieldset Vitals*/
 #vitals{
 	position:absolute;
-	left:1%;
+	left:17%;
+	top: 600px;
+}
+
+/*Styling for the fieldset Appropriate Treatment*/
+#aTreatment{
+	position:absolute;
+	left:52%;
+	top: 600px;
 }
 
 /*refers to all input fields, meant for the ones inside the fieldset*/
