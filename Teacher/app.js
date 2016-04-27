@@ -12,12 +12,16 @@ var fs = require('fs');
 var io = require('socket.io')(app);
 // Child process
 var spawn = require('child_process').spawn;
-// IP Stuff
-var ip = require('ip');
+// Routing stuff for figuring network IPs and whatnot for poking
+var router = require('network');
 
 // Current address being scanned and index (last octet)
 var ipIndex = 0;
-var curAddr = ip.address().slice(0, ip.address().lastIndexOf('.') + 1) + ipIndex;
+// This is the default gateway
+var gateway = '10.36.6.0';
+// This is the address we will be poking - will change every time
+var curAddr = gateway.slice(0, gateway.lastIndexOf('.') + 1) + ipIndex;
+
 
 // Ports and ip configuration
 var localPort = 333; // For local socket connection
@@ -75,30 +79,36 @@ udp.on('message',
 			{
 				// TODO
 				// If this is a student response
-				if(msg.data.student)
+				/*if(msg.data.student)
 				{
 					// Create a new student object
 					var stu = new Client(msg.data.nam, remote.address, msg.data.id);
-				}
+				}*/
 
 				// If it is a submission, copy it over to a file (probly in JSON format for easy processing)
 				// Otherwise do other things
+
+				console.log("Got message: " + msg);
 			});					
 
 // Set the scanner to scan every now and then (50 milliseconds) for new clients
-setTimeout(function()
+setInterval(function()
 				{
-					// Send our selected address a message
-					var m = "r u student?";
-					udp.send(m, 0, m.length, remotePort, curAddr);
-					// Set up next IP
-					ipIndex ++;
-					// We'll assume this is a class C network and only cycle through the last octet
-					if(ipIndex >= 254)
-						ipIndex = 0;
-					// Set the last octet. In 50 milliseconds, the new address will get messaged
-					curAddr = curAddr.slice(0, curAddr.lastIndexOf('.') + 1) + ipIndex;
-				}, 50);
+					if(curAddr)
+					{
+						// Send our selected address a message
+						var m = "r u student?";
+						console.log('Poking ' + curAddr);
+						udp.send(m, 0, m.length, remotePort, curAddr);
+						// Set up next IP
+						ipIndex ++;
+						// We'll assume this is a class C network and only cycle through the last octet
+						if(ipIndex >= 256)
+							ipIndex = 0;
+						// Set the last octet. In 50 milliseconds, the new address will get messaged
+						curAddr = curAddr.slice(0, curAddr.lastIndexOf('.') + 1) + ipIndex;
+					}
+				}, 1);
 
 
 // Set up local socket connection (to teacher control panel)

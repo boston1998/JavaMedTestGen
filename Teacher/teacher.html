@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<!--for the little tab on top of the browser-->
+<head>
+	<!--Applies  the style sheet-->
+	<link rel="stylesheet" href = "teacher.css">
+	<title>Teacher end</title>
+</head>
+<body>
+	<form>
+			
+			<h2 id = "title"> 
+				<select id = "select">
+					<option value = "Medical">Medical<option>
+					<option value = "Trauma">Trauma<option>
+				</select>
+			SCENARIO: Case # <input type = "number", id="caseNum"></input></h2>
+			
+			<br><!--ends particular line-->
+			<b>SCENARIO</b><br>
+			<textarea id = "scenario">Some sample text</textarea><br><br>
+			<b>PATIENT DATA</b><br>
+			<textarea id = "patientData">Some sample text</textarea>
+		<br><br><b>LITE THREAT:</b> <br>
+		<input type = "text", id = "lifeThreat"></input><br><br>
+		<b>POTENTIAL LIFE THREAT:</b>
+		<br><input type = "text", id = "pLifeThreat"></input><br>
+		<div>
+			<!--A fieldset groups data together-->
+			<fieldset id="vitals">
+				<!--Title for the fieldset -->
+				<legend><b>VITAL SIGNS</b></legend>
+				Level of Consciousness <input type = "text", id = "con"></input><br><br>
+				Respirations <input type = "number", id = "resp"></input><br><br>
+				Lung Sounds <input type = "text", id = "lung"></input><br><br>
+				Pulse <input type = "number", id = "pulse"></input><br><br>
+				Blood preassure <input type = "text", id = "preassure"></input><br><br>
+					Carotid Pulse <input type = "text", id = "cPulse"></input><br><br>
+					Femoral Pulse <input type = "text", id = "fPulse"></input><br><br>
+					Radial Pulse <input type = "text", id = "rPulse"></input><br><br>
+				Capillary Refill <input type = "text", id = "cRefill"></input><br><br>
+				Skin Temperature <input type = "text", id = "temp"></input><br><br>
+					Moisture <input type = "text", id = "moisture"></input><br><br>
+					Color <input type = "text", id = "color"></input><br><br>
+				Pupils <input type = "text", id = "pupil"></input><br><br>
+				SaO2 <input type = "number", id = "sao2"></input>
+			</fieldset>
+			<br>
+			<fieldset id="aTreatment">
+				<legend><b>APPROPRIATE TREATMENT INFORMATION</b></legend>
+				Level of Consciousness <input type = "text", id = "acon"></input><br><br>
+				Respirations <input type = "number", id = "aresp"></input><br><br>
+				Lung Sounds <input type = "text", id = "alung"></input><br><br>
+				Pulse <input type = "number", id = "apulse"></input><br><br>
+				Blood preassure <input type = "text", id = "apreassure"></input><br><br>
+					Carotid Pulse <input type = "text", id = "acPulse"></input><br><br>
+					Femoral Pulse <input type = "text", id = "afPulse"></input><br><br>
+					Radial Pulse <input type = "text", id = "arPulse"></input><br><br>
+				Capillary Refill <input type = "text", id = "acRefill"></input><br><br>
+				Skin Temperature <input type = "text", id = "atemp"></input><br><br>
+					Moisture <input type = "text", id = "amoisture"></input><br><br>
+					Color <input type = "text", id = "acolor"></input><br><br>
+				Pupils <input type = "text", id = "apupil"></input><br><br>
+				SaO2 <input type = "number", id = "asao2"></input>
+			</fieldset>
+			<br>
+			<fieldset id="iTreatment">
+				<legend><b>INAPROPRIATE TREATMENT INFORMATION</b></legend>
+				Level of Consciousness <input type = "text", id = "icon"></input><br><br>
+				Respirations <input type = "number", id = "iresp"></input><br><br>
+				Lung Sounds <input type = "text", id = "ilung"></input><br><br>
+				Pulse <input type = "number", id = "ipulse"></input><br><br>
+				Blood preassure <input type = "text", id = "ipreassure"></input><br><br>
+					Carotid Pulse <input type = "text", id = "icPulse"></input><br><br>
+					Femoral Pulse <input type = "text", id = "ifPulse"></input><br><br>
+					Radial Pulse <input type = "text", id = "irPulse"></input><br><br>
+				Capillary Refill <input type = "text", id = "icRefill"></input><br><br>
+				Skin Temperature <input type = "text", id = "itemp"></input><br><br>
+					Moisture <input type = "text", id = "imoisture"></input><br><br>
+					Color <input type = "text", id = "icolor"></input><br><br>
+				Pupils <input type = "text", id = "ipupil"></input><br><br>
+				SaO2 <input type = "number", id = "isao2"></input>
+			</fieldset>
+		</div>
+	</form>
+	<button id = "save">Save</button>
+	<button id = "menu">Back to menu</button>
+	<br>
+	<div id = "caccLogo">
+		<img src="http://career-center.org/wp-content/uploads/2015/12/CACC.png", alt = "CACC Logo" style="width:130px;height:50px;"></img>
+	</div>
+</body>
+</html>

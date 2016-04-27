@@ -1,0 +1,120 @@
+/*Sets background color and font of everything on page*/
+body {
+	background-color: lightblue;
+	font-family: sans-serif;
+}
+
+/*centers title and moves it just a tad away from the top*/
+#title {
+	text-align:center; 
+	top:5%;
+}
+
+#select{
+	position:relative;
+	display: inline-block;
+	width: 9%;
+	padding: 0px;
+	font-size: 25px;
+	text-align: center;
+}
+
+/*styling for the scenario and patient data text areas*/
+textarea {
+	width: 99%;
+	height: 150px;
+	box-sizing: border-box;
+	resize: none;
+	font-size:large;
+}
+
+/*syling required for all fieldsets to fit on screen without horizontal scroll bar*/
+fieldset {
+	width: 29%;
+	border-color: black;
+	padding: 20px;
+	float:left;
+}
+
+/*centers the title for the fieldsets*/
+legend {
+	text-align: center;
+}
+
+/*Styling for the fieldset Vitals*/
+#vitals{
+	position:absolute;
+	left:0%;
+	top:66%
+}
+
+/*Styling for the fieldset Appropriate Treatment*/
+#aTreatment{
+	position:absolute;
+	left:33.6%;
+	top:66%
+}
+
+/*Styling for the fieldset Inappropriate Treatment*/
+#iTreatment{
+	position:absolute;
+	left:67.2%;
+	top:66%
+}
+
+/*styles buttons on the bottom*/
+button{
+	display: inline-block;
+	position:relative;
+	top: 630px;
+	width:49%;
+	height:100px;
+	font-size:72px;
+	border: 2px solid black;
+	left: 1%;
+	cursor: pointer;
+	border-radius:8px;
+	box-shadow: 0 9px #999;
+}
+
+/*Changes button color when you hover over it*/
+button:hover{
+	transition-duration: 0.3s;
+	background-color: black;
+	color: white;
+}
+
+/*The "clicking" effect on the buttons*/
+button:active{
+	transition-duration: 0s;
+	box-shadow: 0 5px #666;
+	transform: translateY(2px);
+}
+
+/*Styling for CACC logo, bottom middle of the screen*/
+#caccLogo{
+	position: absolute;
+	bottom: -60%;
+	left: 45%;
+}
+
+/*refers to all input fields, meant for the ones inside the fieldset*/
+input{
+	width: 52%;
+	float: right;
+}
+
+/*exception to input css because these input fields are not inside the fieldset*/
+#lifeThreat, #pLifeThreat{
+	width: 98.7%;
+	float: left;
+}
+/*exception to input css, goes to the right of the title*/
+#caseNum{
+	position: relative;
+	width: 2.5%;
+	top:2.9%;
+	font: 25px;
+	margin: 5px;
+	right: 34%
+}
