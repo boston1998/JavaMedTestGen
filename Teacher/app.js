@@ -21,8 +21,8 @@ var ipIndex = 0;
 var gateway = '10.36.6.0';
 // This is the address we will be poking - will change every time
 var curAddr = gateway.slice(0, gateway.lastIndexOf('.') + 1) + ipIndex;
-
-
+// Socket connection to local user
+var teacher = false;
 // Ports and ip configuration
 var localPort = 333; // For local socket connection
 var remotePort = 334; // For remote UDP communication
@@ -58,34 +58,62 @@ function Client(nam, id, ip)
 							var part1 = m.data.slice(0, m.data.length / 2);
 							var part2 = m.data.slice(part1.length, m.data.length);
 							// Re-stringify and send parts
-							this.send(JSON.stringify({data: part1, count: 2 * m.count}));
-							this.send(JSON.stringify({data: part2, count: 2 * m.count}));
+							this.send(JSON.stringify({'data' : part1, 'part' : data.part, 'count' : 2 * m.count}));
+							this.send(JSON.stringify({'data' : part2, 'part' : data.part + 1, 'count' : 2 * m.count}));
 						}
 					};
 	// Register this
 	allClients.push(this);
 }
 
+// Student finder
+function findStuById(id)
+{
+	for(var i = 0; i < allClients.length; i ++)
+		if(allClients[i].getId() === id)
+			return allClients[i];
+	return false;
+}
+
 // URL request processing
-express.get('/controlpanel', 
-			function(req, res)
-			{
-				res.sendFile(__dirname + "/cp.html");
-			});
+express.get('/menu.html', 
+				function(req, res)
+				{
+					res.sendFile(__dirname + "/html/menu.html");
+				});
+express.get('/teacher.html', 
+				function(req, res)
+				{
+					res.sendFile(__dirname + "/html/teacher.html");
+				});
+express.get('/menu.css',
+				function(req, res)
+				{
+					res.sendFile(__dirname + "/css/menu.css");
+				});
+express.get('/teacher.css',
+				function(req, res)
+				{
+					res.sendFile(__dirname + "/css/teacher.css");
+				});
 
 // UDP message callback
 udp.on('message',
 			function(msg, remote)
 			{
 				// TODO
-				// If this is a student response
-				/*if(msg.data.student)
+				// See if the message contains any data at all
+				if(msg.data)
 				{
-					// Create a new student object
-					var stu = new Client(msg.data.nam, remote.address, msg.data.id);
-				}*/
+					// If this is a student response
+					if(msg.data.student)
+					{
+						// Create a new student object
+						var stu = new Client(msg.data.nam, remote.address, allClients.length);
+					}
 
 				// If it is a submission, copy it over to a file (probly in JSON format for easy processing)
+				}
 				// Otherwise do other things
 
 				console.log("Got message: " + msg);
@@ -116,9 +144,44 @@ io.on('connection',
 		function(socket)
 		{
 			// Local socket callbacks - for communicating with teacher control panel
-
+			teacher = socket;
 			// Send file callback - send particular file to particular client
+			teacher.on('send',
+							function(file, studentId)
+							{
+								// Make sure file is accessible
+								fs.access(file, fs.R_OK, 
+												function(err)
+												{
+													if(!err)
+													{
+														// File is okay, send it
+														var data = fs.readFileSync(file, ['UTF8', 'r']);
+														var stu = findStuById(studentId);
+														if(stu)
+															stu.send(JSON.stringify({'data' : data, 'part' : 1, 'count' : 1}));
+													}
+												});
+							});
 			// Broadcast file callback - send one file to everyone
+			teacher.on('broadcast',
+							function(file)
+							{
+								// Make sure file is accessible
+								fs.access(file, fs.R_OK, 
+												function(err)
+												{
+													if(!err)
+													{
+														var data = fs.readFileSync(file, ['UTF8', 'r']);
+														// File is okay, send it
+														allClients.forEach(function(stu, i, arr)
+																					{
+																						stu.send(JSON.stringify({'data' : data, 'part' : 1, 'count' : 1}));
+																					});
+													}
+												});
+							});
 			// Save scenario callback - save scenario file
 			// Read folder callback - read and output ALL the scenario files
 			// Grade assignment callback - ?
@@ -127,8 +190,8 @@ io.on('connection',
 			socket.on('disconnect',
 							function()
 							{
-									// Lmaoz user trapping
-									//spawn('explorer', ["http://localhost:" + port + "/controlpanel"]);
+									// Teacher no longer exists, await reconnection
+									teacher = false;
 							});
 		});
 
@@ -143,4 +206,4 @@ udp.bind(remotePort, function(){
 							console.log('Listening on ' + remotePort);
 						 });
 // Open client browser to control panel
-spawn('explorer', ["http://localhost:" + localPort + "/controlpanel"]);
+spawn('explorer', ["http://localhost:" + localPort + "/menu.html"]);
