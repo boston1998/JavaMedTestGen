@@ -1,0 +1,54 @@
+/*styilng for the main menu*/
+body{
+background-image: url("http://www.sfu.ca/medicaltourism/images_layout/stock_photos/iStock_000005332991Small.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+h1{
+	text-align: center;
+	font-size: 72px;
+	background-color: rgb(163, 216, 260)
+}
+
+#menuDiv{
+    position: absolute;
+    top: 42%;
+    margin: auto;
+    left: 130px;
+}
+
+button{
+    display: inline-block;
+	position:relative;
+	height:100px;
+	font-size:72px;
+	border: 2px solid black;
+	margin: 5px;
+	cursor: pointer;
+	float: left;
+	border-radius:8px;
+	box-shadow: 0 9px #999;
+}
+
+/*Changes button color when you hover over it*/
+button:hover{
+	transition-duration: 0.3s;
+	background-color: black;
+	color: white;
+}
+
+/*The "clicking" effect on the buttons*/
+button:active{
+	transition-duration: 0s;
+	box-shadow: 0 5px #666;
+	transform: translateY(2px);
+}
+
+/*Styling for CACC logo, bottom middle of the screen*/
+#caccLogo{
+	position: absolute;
+	top: 89%;
+	left: 45%;
+	width: 130px;
+}
