@@ -30,10 +30,9 @@ textarea {
 
 /*syling required for all fieldsets to fit on screen without horizontal scroll bar*/
 fieldset {
-	width: 29%;
+	width: 365px;
 	border-color: black;
 	padding: 20px;
-	float:left;
 }
 
 /*centers the title for the fieldsets*/
@@ -45,14 +44,14 @@ legend {
 #vitals{
 	position:absolute;
 	left:0%;
-	top:66%
+	top:600px;
 }
 
 /*Styling for the fieldset Appropriate Treatment*/
 #aTreatment{
 	position:absolute;
 	left:33.6%;
-	top:66%
+	top:600px;
 }
 
 #medInfo{
@@ -64,7 +63,7 @@ legend {
 #iTreatment{
 	position:absolute;
 	left:67.2%;
-	top:66%
+	top:600px
 }
 
 /*styles buttons on the bottom*/
@@ -99,7 +98,7 @@ button:active{
 /*Styling for CACC logo, bottom middle of the screen*/
 #caccLogo{
 	position: absolute;
-	bottom: -60%;
+	bottom: -500px;
 	left: 45%;
 }
 

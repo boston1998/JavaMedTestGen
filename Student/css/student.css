@@ -1,0 +1,28 @@
+body{
+	background-color: lightblue;
+}
+
+/*syling required for all fieldsets to fit on screen without horizontal scroll bar*/
+fieldset {
+	width: 29%;
+	border-color: black;
+	padding: 20px;
+	float:left;
+}
+
+/*centers the title for the fieldsets*/
+legend {
+	text-align: center;
+}
+
+/*Styling for the fieldset Vitals*/
+#vitals{
+	position:absolute;
+	left:1%;
+}
+
+/*refers to all input fields, meant for the ones inside the fieldset*/
+input{
+	width: 52%;
+	float: right;
+}
