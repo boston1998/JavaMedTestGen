@@ -4,6 +4,24 @@
  to send a particular test to all the sutdents-->
 <html>
 <head>
-
+	<!--Applies  the style sheet-->
+	<link rel="stylesheet" href = "../css/send.css">
+	<title>Make it rain tests</title>
 </head>
+<div id="students", style="overflow-y:scroll;height:500px;">
+<script>
+for(var i = 0; i<50; i++)
+	document.write("<button attribute: class = 'stuButtons'>Student #" + i + "</button><br>");
+</script>
+</div>
+<div id="tests", style="overflow-y:scroll;height:500px;">
+<script>
+for(var i = 0; i<50; i++)
+	document.write("<button attribute: class = 'testButtons'>Test #" + i + "</button><br>");
+</script>
+</div>
+<div id="buttonDiv">
+<button id = "Send", attribute: class= "submitButtons">Send</button>
+<button id = "menu", onclick="location.href='menu.html';", attribute: class= "submitButtons">Back to menu</button>
+</div>
 <html>
