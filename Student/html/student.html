@@ -1,11 +1,24 @@
 <!DOCTYPE html>
+<!--This will be the student side of the application. They should be shown the scenario and patient data
+They will input the Life threat and potential life threat catagories. At this point their responses should be sent
+to the teacher for evaluation. The teaher will then respond with correct or incorrect. Based on this the appropriate
+or inappropiriate information should be displayed along with the vital signs. *Note: these should remain hidden
+until the teacher responds*-->
 <html>
 <head>
 	<!--Applies  the style sheet-->
 	<link rel="stylesheet" href = "../css/student.css">
+	<!--For the tab ontop-->
 	<title>Student end</title>
 </head>
 <body>
+	<!--TODO: Display the scenario and patient data in forms autofilled as specefied in a specific json test file-->
+	<!--TODO: Hide the fieldsets until after the a response from the teacher-->
+	<!--TODO: Create forms for the student to fill in life threat and potential life threat-->
+	<!--TODO: Create a button to submit that information. This should give the teacher an alert-->
+	<!--TODO: Recieve a message from the teacher and display the correct information-->
+	
+	<!--the same groups of information as in teacher, filled by its responses-->
 	<fieldset id="vitals">
 		<!--Title for the fieldset -->
 		<legend><b>VITAL SIGNS</b></legend>
@@ -43,5 +56,6 @@
 		Pupils <input type = "text", id = "apupil", readonly></input><br><br>
 		SaO2 <input type = "number", id = "asao2", readonly></input>
 	</fieldset>
+	<!--TODO: create inappropiriate treatment information fieldset-->
 </body>
 </html>

@@ -1,34 +1,45 @@
 <!DOCTYPE html>
+<!--The test creation form. This contains fields for all required
+information for the teacher to input. These responses are to be recoreded
+in json file for later use in grading. Each json file (individual test)
+is to be stored in the test file-->
 <html>
-<!--for the little tab on top of the browser-->
 <head>
 	<!--Applies  the style sheet-->
 	<link rel="stylesheet" href = "../css/teacher.css">
+	<!--For that tab ontop-->
 	<title>Teacher end</title>
 </head>
 <body>
+	<!--The overarching form, pretty much the same as the body-->
 	<form>
-			<h2 id = "title"> 
-				<select id = "select">
-					<option value = "Medical">Medical<option>
-					<option value = "Trauma">Trauma<option>
-				</select>
-			SCENARIO: Case # <input type = "number", id="caseNum"></input></h2>
-			
-			<br><!--ends particular line-->
-			<b>SCENARIO</b><br>
-			<textarea id = "scenario">Some sample text</textarea><br><br>
-			<b>PATIENT DATA</b><br>
-			<textarea id = "patientData">Different sample text</textarea><br><br>
-			<b>LITE THREAT:</b><br>
-			<input type = "text", id = "lifeThreat"></input><br><br>
-			<b>POTENTIAL LIFE THREAT:</b>
-			<br><input type = "text", id = "pLifeThreat"></input><br>
+		<!--The container for the title and surrounding input-->
+		<h2 id = "title"> 
+			<!--The dropdown box on top-->
+			<select id = "select">
+				<option value = "Medical">Medical<option>
+				<option value = "Trauma">Trauma<option>
+			</select>
+		SCENARIO: Case # <input type = "number", id="caseNum"></input>
+		</h2>		
+		<br>
+		<b>SCENARIO</b><br>
+		<!--lare text field for input-->
+		<textarea id = "scenario">Scenario here...</textarea><br><br>
+		<b>PATIENT DATA</b><br>
+		<textarea id = "patientData">Patient data here...</textarea><br><br>
+		<!--smaller text input fields for less demanding responses-->
+		<b>LITE THREAT:</b><br>
+		<input type = "text", id = "lifeThreat"></input><br><br>
+		<b>POTENTIAL LIFE THREAT:</b>
+		<br><input type = "text", id = "pLifeThreat"></input><br>
+		<!--Div containing the vital signs, appropriate, and inapropriate treatment information groups-->
 		<div id="medInfo">
-			<!--A fieldset groups data together-->
+			<!--Contains like data in a group-->
 			<fieldset id="vitals">
-				<!--Title for the fieldset -->
+				<!--Title for the fieldset-->
 				<legend><b>VITAL SIGNS</b></legend>
+				<!--All the input you could ever need-->
 				Level of Consciousness <input type = "text", id = "con"></input><br><br>
 				Respirations <input type = "number", id = "resp"></input><br><br>
 				Lung Sounds <input type = "text", id = "lung"></input><br><br>
@@ -47,6 +58,7 @@
 			<br>
 			<fieldset id="aTreatment">
 				<legend><b>APPROPRIATE TREATMENT INFORMATION</b></legend>
+				<!--All the input you could ever need-->
 				Level of Consciousness <input type = "text", id = "acon"></input><br><br>
 				Respirations <input type = "number", id = "aresp"></input><br><br>
 				Lung Sounds <input type = "text", id = "alung"></input><br><br>
@@ -65,6 +77,7 @@
 			<br>
 			<fieldset id="iTreatment">
 				<legend><b>INAPROPRIATE TREATMENT INFORMATION</b></legend>
+				<!--All the input you could ever need-->
 				Level of Consciousness <input type = "text", id = "icon"></input><br><br>
 				Respirations <input type = "number", id = "iresp"></input><br><br>
 				Lung Sounds <input type = "text", id = "ilung"></input><br><br>
@@ -82,9 +95,12 @@
 			</fieldset>
 		</div>
 	</form>
+	<!--Save records all responses and packages them into a json file to be stored in the test file-->
 	<button id = "save">Save</button>
+	<!--Return to home menu-->
 	<button id = "menu", onclick="location.href='menu.html';">Back to menu</button>
 	<br>
+	<!--At this point its really just marketing-->
 	<div id = "caccLogo">
 		<img src="http://career-center.org/wp-content/uploads/2015/12/CACC.png", alt = "CACC Logo" style="width:130px;height:50px;"></img>
 	</div>

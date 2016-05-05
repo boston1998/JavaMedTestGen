@@ -1,19 +1,24 @@
 <!DOCTYPE html>
+<!--The main menu. Has a pretty background and basic functional buttons.
+These include Create, Send, and View. Each linking to their own html pages.
+A lovely title and the CACC logo for the bottom.-->
 <html>
 <head>
+	<!--Applies the stylesheet-->
 	<link rel="stylesheet" href = "../css/menu.css">
+	<!--For the tab-->
 	<title>Main Menu</title>
 </head>
 <body>
+	<!--The title, used in a header tag for boldness-->
 	<h1 id="title">Medical/Trauma Test Generator</h1>
+	<!--The main div for the page, holds the buttons-->
 	<div id = "menuDiv">
 		<button id="create", onclick="location.href='teacher.html';">Create</button>
-		<button id="send">Send</button>
+		<button id="send", onclick="location.href='send.html';">Send</button>
 		<button id="view", onclick="">View Submissions
 	</div>
-	<script>
-	
-	</script>
+	<!--A small div for the CACC logo-->
 	<div id = "caccLogo">
 		<img src="http://career-center.org/wp-content/uploads/2015/12/CACC.png", alt = "CACC Logo" style="width:130px;height:50px;"></img>
 	</div>

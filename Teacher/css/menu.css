@@ -5,12 +5,14 @@ background-repeat: no-repeat;
 background-size: cover;
 }
 
+/*Creates the banner behind the title and styles the text of the title*/
 h1{
 	text-align: center;
 	font-size: 72px;
 	background-color: rgb(163, 216, 260)
 }
 
+/*Put that div into its place*/
 #menuDiv{
     position: absolute;
     top: 42%;
@@ -18,6 +20,7 @@ h1{
     left: 130px;
 }
 
+/*make the buttons pretty*/
 button{
     display: inline-block;
 	position:relative;

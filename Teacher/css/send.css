@@ -2,30 +2,31 @@ body{
 	background-color: lightblue;
 }
 
+/*applies to all divs, overarching organization of the elements on the page*/
 div{
-	background-color: white;
+	background-color: rgb(200, 500, 300);
 	width: 48%;
 	margin: 10px;
 	float:left;
-	
 }
 
-.buttonDiv{
-	width = 100%;
+/*Styles submit button div, keep it the same color as the page background*/
+#buttonDiv{
+	background-color: lightblue;
+	width: 98%;
 }
 
+/*For those big buttons on the bottom*/
 .submitButtons{
-	display: inline-block;
 	position:relative;
-	top: 50px;
-	width:49%;
+	width:32.3%;
 	height:100px;
 	font-size:72px;
 	border: 2px solid black;
-	left: 1%;
 	cursor: pointer;
 	border-radius:8px;
 	box-shadow: 0 9px #999;
+	margin: 5px
 }
 
 /*Changes button color when you hover over it*/
@@ -42,9 +43,23 @@ button:active{
 	transform: translateY(2px);
 }
 
-
+/*Default class for buttons in the test/student div*/
 .stuButtons, .testButtons{
-	dispaly: inline-block;
+	margin: 3px;
+	width: 90%;
+	text-align:left;
+	border-radius: 8px;
+}
+
+/*For the titles in student and test divs*/
+h1{
+	text-align: center;
+}
+
+/*styling to keep show a selected student/test*/
+.selected{
+	background-color: cyan;
+	color: black;
 	margin: 3px;
 	width: 90%;
 	text-align:left;

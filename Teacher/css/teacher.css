@@ -10,9 +10,9 @@ body {
 	top:5%;
 }
 
+/*places the Medical/Trauma option box*/
 #select{
 	position:relative;
-	display: inline-block;
 	width: 9%;
 	padding: 0px;
 	font-size: 25px;

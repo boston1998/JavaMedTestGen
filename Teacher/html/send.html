@@ -1,27 +1,50 @@
 <!DOCTYPE html>
 <!--html for sending tests out to students. Two fields, populated by students
- and tests respecifvely. A button to send out test to particular student, a broadcast button
- to send a particular test to all the sutdents-->
+ and tests respecitvely. Students and tests populated by server supplied arrays. 
+ A send button to send out specefied test to specefied student, a broadcast button
+ to send a particular test to all the sutdents. Back button to return to home menu.-->
 <html>
 <head>
 	<!--Applies  the style sheet-->
 	<link rel="stylesheet" href = "../css/send.css">
+	<!--What shows up on the li'l tab, please come up with a better name-->
 	<title>Make it rain tests</title>
 </head>
+<!--Creates a container for students, enables scrollbar -->
 <div id="students", style="overflow-y:scroll;height:500px;">
-<script>
-for(var i = 0; i<50; i++)
-	document.write("<button attribute: class = 'stuButtons'>Student #" + i + "</button><br>");
-</script>
+	<h1>Select Students</h1>
+	<!--script for populating the student div with students(buttons)-->
+	<script>
+	for(var i = 0; i<50; i++)
+		document.write("<button attribute: class = 'stuButtons', onclick = 'clicker(this)'>Student #" + i + "</button><br>");
+	</script>
 </div>
+<!--Creates a container for tests, enables scrollbar -->
 <div id="tests", style="overflow-y:scroll;height:500px;">
-<script>
-for(var i = 0; i<50; i++)
-	document.write("<button attribute: class = 'testButtons'>Test #" + i + "</button><br>");
-</script>
+	<h1>Select Tests</h1>
+	<script>
+	for(var i = 0; i<50; i++)
+	{
+		//if a student is selected, change css classes to look like it
+		function clicker(button)
+		{
+			if(button.className != "selected")
+				button.className = "selected";
+			else
+				button.className = "testButtons";
+		}
+		//populate the test div with possible tests(buttons)
+		document.write("<button attribute: class = 'testButtons', onclick = 'clicker(this)'>Test #" + i + "</button><br>");
+	}
+	</script>
 </div>
+<!--Div to hold the large submit buttons-->
 <div id="buttonDiv">
-<button id = "Send", attribute: class= "submitButtons">Send</button>
-<button id = "menu", onclick="location.href='menu.html';", attribute: class= "submitButtons">Back to menu</button>
+	<!--Send spedified test to specefied students-->
+	<button id = "Send", attribute: class= "submitButtons">Send</button>
+	<!--Send spedified test to all students-->
+	<button id = "broadcast", attribute: class = "submitButtons">Broadcast</button>
+	<!--Return to home screen-->
+	<button id = "menu", onclick="location.href='menu.html';", attribute: class= "submitButtons">Back</button>
 </div>
 <html>
