@@ -12,8 +12,6 @@ var fs = require('fs');
 var io = require('socket.io')(app);
 // Child process
 var spawn = require('child_process').spawn;
-// Routing stuff for figuring network IPs and whatnot for poking
-var router = require('network');
 
 // Current address being scanned and index (last octet)
 var ipIndex = 0;
@@ -183,6 +181,11 @@ io.on('connection',
 												});
 							});
 			// Save scenario callback - save scenario file
+			teacher.on('save',
+							function(fileName, fileData)
+							{
+								fs.appendFileSync(fileName, fileData, 'utf8');
+							});
 			// Read folder callback - read and output ALL the scenario files
 			// Grade assignment callback - ?
 			// Close callback - cleanly close the html
