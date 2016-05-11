@@ -1,0 +1,4 @@
+# JavaMedTestGen
+Purpose: To create a test generator for the medical students. In addition to the teacher being able to create the tests should also be able to send these tests out to students and then grade the submissions. Once evaluated feed back and additional information will be provided back to the student. 
+Teacher Side: This will be the meat of the application as the teacher will be able to do many more things than the student. There are several forms contained within the teacher folder.
+Send.html - This form is where the teacher will administer the tests to students. It should be made up of two sections. One section should be filled by the students that are in his class. The other should be filled with the test that he has created. Both  The tests shoudl be all held in a file on the teachers computer. There should be three buttons on this page. One to return to menu. Send - Which will send out a specific test to specific students. 
